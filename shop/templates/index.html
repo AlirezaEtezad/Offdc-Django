@@ -1,0 +1,43 @@
+{% extends 'master.html' %}
+{% load static %}
+
+{% block title %}
+صفحه اصلی
+{% endblock %}
+
+
+{% block content %}
+<header class="hero">
+    <div class="container">
+        <h1>Upgrade Your Office with Style</h1>
+        <p>Discover premium office furniture designed for comfort and productivity.</p>
+        <a href="{% url 'index' %}" class="btn-primary">Shop Now</a>
+    </div>
+</header>
+
+<section class="featured-products">
+    <div class="container">
+        <h2>Our Bestsellers</h2>
+        <div class="product-grid">
+            <div class="product-card">
+                <img src="{% static 'images/desk.jpg' %}" alt="Modern Desk">
+                <h3>Modern Office Desk</h3>
+                <p>$199.99</p>
+                <a href="#" class="btn">View Details</a>
+            </div>
+            <div class="product-card">
+                <img src="{% static 'images/chair.jpg' %}" alt="Ergonomic Chair">
+                <h3>Ergonomic Office Chair</h3>
+                <p>$149.99</p>
+                <a href="#" class="btn">View Details</a>
+            </div>
+            <div class="product-card">
+                <img src="{% static 'images/bookshelf.jpg' %}" alt="Bookshelf">
+                <h3>Elegant Bookshelf</h3>
+                <p>$99.99</p>
+                <a href="#" class="btn">View Details</a>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}

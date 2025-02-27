@@ -1,0 +1,34 @@
+{% extends 'master.html' %}
+{% load static %}
+
+{% block title %}
+صفحه محصول
+{% endblock %}
+
+{% block content %}
+<section class="product-section">
+    <div class="container">
+        <h2>Explore Our Collection</h2>
+        <div class="product-grid">
+            <div class="product-card">
+                <img src="{% static 'images/desk.jpg' %}" alt="Office Desk">
+                <h3>Luxury Executive Desk</h3>
+                <p>$299.99</p>
+                <a href="#" class="btn">Buy Now</a>
+            </div>
+            <div class="product-card">
+                <img src="{% static 'images/chair.jpg' %}" alt="Ergonomic Chair">
+                <h3>Premium Ergonomic Chair</h3>
+                <p>$199.99</p>
+                <a href="#" class="btn">Buy Now</a>
+            </div>
+            <div class="product-card">
+                <img src="{% static 'images/bookshelf.jpg' %}" alt="Wooden Bookshelf">
+                <h3>Elegant Wooden Bookshelf</h3>
+                <p>$129.99</p>
+                <a href="#" class="btn">Buy Now</a>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}
