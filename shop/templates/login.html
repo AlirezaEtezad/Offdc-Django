@@ -1,0 +1,21 @@
+{% extends 'master.html' %}
+
+{% block content %}
+<div class="d-flex justify-content-center align-items-center vh-100">
+    <div class="login-card shadow-lg p-4 rounded">
+        <h2 class="text-center mb-4">Login</h2>
+        <form method="post">
+            {% csrf_token %}
+            <div class="mb-3">
+                <label for="username" class="form-label">Username</label>
+                {{ form.username }}
+            </div>
+            <div class="mb-3">
+                <label for="password" class="form-label">Password</label>
+                {{ form.password }}
+            </div>
+            <button type="submit" class="btn btn-purple w-100">Login</button>
+        </form>
+    </div>
+</div>
+{% endblock %}

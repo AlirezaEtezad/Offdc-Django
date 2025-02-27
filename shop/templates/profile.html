@@ -5,17 +5,16 @@
 پروفایل کاربری
 {% endblock %}
 
-
-
 {% block content %}
+<div class="d-flex justify-content-center align-items-center vh-100">
+    <div class="profile-card shadow-lg p-4 rounded text-center">
+        <h2 class="fw-bold text-purple">پروفایل کاربری</h2>
+        <h3 class="mt-3">{{ user.username }} خوش آمدید</h3>
+        <p class="text-muted">{{ user.email }} آدرس ایمیل</p>
+        <p class="text-muted">{{ user.phone }} شماره همراه</p>
+        <p class="text-muted">{{ user.address }} آدرس</p>
 
-<h2>پروفایل کاربری</h2>
-<h3>{{ user.username }} خوش آمدید</h3>
-<p>{{ user.email }}</p>
-<p>{{ user.phone }}</p>
-<p>{{ user.address }}</p>
-
-
-<a href="{% url 'signout' %}" class="btn">خروج</a>
-
+        <a href="{% url 'signout' %}" class="btn btn-purple mt-3">خروج</a>
+    </div>
+</div>
 {% endblock %}

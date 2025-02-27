@@ -5,37 +5,50 @@
 صفحه اصلی
 {% endblock %}
 
-
 {% block content %}
 <header class="hero">
-    <div class="container">
-        <h1>Upgrade Your Office with Style</h1>
-        <p>Discover premium office furniture designed for comfort and productivity.</p>
-        <a href="{% url 'index' %}" class="btn-primary">Shop Now</a>
+    <div class="container text-center text-white">
+        <h1 class="display-4 fw-bold">Upgrade Your Office with Style</h1>
+        <p class="lead">Discover premium office furniture designed for comfort and productivity.</p>
+        <a href="{% url 'index' %}" class="btn btn-lg btn-purple">Shop Now</a>
     </div>
 </header>
 
-<section class="featured-products">
+<section class="featured-products py-5">
     <div class="container">
-        <h2>Our Bestsellers</h2>
-        <div class="product-grid">
-            <div class="product-card">
-                <img src="{% static 'images/desk.jpg' %}" alt="Modern Desk">
-                <h3>Modern Office Desk</h3>
-                <p>$199.99</p>
-                <a href="#" class="btn">View Details</a>
+        <h2 class="text-center fw-bold">Our Bestsellers</h2>
+        <div class="row">
+            <div class="col-md-4">
+                <div class="card shadow">
+                    <img src="{% static 'images/K511.jpg' %}" class="card-img-top" alt="Modern Desk">
+                    <div class="card-body text-center">
+                        <h3 class="card-title">Modern Office Desk</h3>
+                        <p class="price fw-bold">$1399.99</p>
+                        <a href="#" class="btn btn-outline-purple">View Details</a>
+                    </div>
+                </div>
             </div>
-            <div class="product-card">
-                <img src="{% static 'images/chair.jpg' %}" alt="Ergonomic Chair">
-                <h3>Ergonomic Office Chair</h3>
-                <p>$149.99</p>
-                <a href="#" class="btn">View Details</a>
+
+            <div class="col-md-4">
+                <div class="card shadow">
+                    <img src="{% static 'images/Concord.jpg' %}" class="card-img-top" alt="Ergonomic Chair">
+                    <div class="card-body text-center">
+                        <h3 class="card-title">Ergonomic Office Chair</h3>
+                        <p class="price fw-bold">$149.99</p>
+                        <a href="#" class="btn btn-outline-purple">View Details</a>
+                    </div>
+                </div>
             </div>
-            <div class="product-card">
-                <img src="{% static 'images/bookshelf.jpg' %}" alt="Bookshelf">
-                <h3>Elegant Bookshelf</h3>
-                <p>$99.99</p>
-                <a href="#" class="btn">View Details</a>
+
+            <div class="col-md-4">
+                <div class="card shadow">
+                    <img src="{% static 'images/K541.jpg' %}" class="card-img-top" alt="Bookshelf">
+                    <div class="card-body text-center">
+                        <h3 class="card-title">Elegant Bookshelf</h3>
+                        <p class="price fw-bold">$99.99</p>
+                        <a href="#" class="btn btn-outline-purple">View Details</a>
+                    </div>
+                </div>
             </div>
         </div>
     </div>

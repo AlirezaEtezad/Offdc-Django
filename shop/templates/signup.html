@@ -5,14 +5,20 @@
 ثبت نام مشتری
 {% endblock %}
 
-
-
 {% block content %}
+<div class="d-flex justify-content-center align-items-center vh-100">
+    <div class="register-card shadow-lg p-4 rounded">
+        <h2 class="fw-bold text-purple text-center">ثبت نام مشتری</h2>
 
-<form method="post">
-    {% csrf_token %}
-    {{ form.as_p }}
-    <button type="submit"> ثبت نام </button>
-</form>
-
+        <div class="form-container">
+            <form method="post">
+                {% csrf_token %}
+                <div class="form-group">
+                    {{ form.as_p }}
+                </div>
+                <button type="submit" class="btn btn-purple mt-3 w-100">ثبت نام</button>
+            </form>
+        </div>
+    </div>
+</div>
 {% endblock %}

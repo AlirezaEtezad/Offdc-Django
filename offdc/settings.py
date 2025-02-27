@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-z7(9u-fev81z^-@nm(-&o6f10a_ynmd(nem*&f)0$vlhq1$=)5
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -45,6 +45,9 @@ AUTH_USER_MODEL = 'shop.Customer'
 # AUTHENTICATION_BACKENDS = [
 # 'django.contrib.auth.backends.ModelBackend',
 # ]
+
+LOGIN_REDIRECT_URL = '/profile/'  # Redirect to home page after login
+LOGOUT_REDIRECT_URL = '/'  # Redirect to login after logout
 
 
 MIDDLEWARE = [
