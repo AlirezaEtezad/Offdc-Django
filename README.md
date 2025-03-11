@@ -79,4 +79,4 @@ Alireza Etezad - [@AlirezaEte](https://t.me/AlirezaEte) - ar_etezad@yahoo.com
 - Python.org
 - Contributors and supporters of the project
 
-Thank you for visiting the Kafshe Namayesh repository, we hope you find this project useful for your needs and look forward to your contributions and feedback.
+Thank you for visiting the OFFDC repository, we hope you find this project useful for your needs and look forward to your contributions and feedback.
