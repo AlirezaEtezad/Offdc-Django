@@ -1,0 +1,20 @@
+{% extends 'master.html' %}
+{% load static %}
+
+
+{% block title %}
+لیست محصولات
+{% endblock %}
+
+{% block content %}
+
+<ul>
+    {% for product in products %}
+    <li>
+        <a href="{% url 'product' product.id %}">{{ product.name }}</a> - {{ product.price }} ریال - {{ product.get_category_display }}
+    </li>
+    {% endfor %}
+</ul>
+
+
+{% endblock %}
