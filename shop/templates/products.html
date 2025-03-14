@@ -10,10 +10,17 @@
 
 <ul>
     {% for product in products %}
-    <li>
-        <a href="{% url 'product' product.id %}">{{ product.name }}</a> - {{ product.price }} ریال - {{ product.get_category_display }}
-    </li>
-    {% endfor %}
+    <div class="product">
+        {% if product.image %}
+            <img src="{{ product.image.url }}" alt="{{ product.name }}" width="150">
+        {% else %}
+            <img src="/static/images/no-image.jpg" alt="No Image" width="150">
+        {% endif %}
+        <h3>{{ product.name }}</h3>
+        <p>{{ product.price }}</p>
+    </div>
+{% endfor %}
+
 </ul>
 
 

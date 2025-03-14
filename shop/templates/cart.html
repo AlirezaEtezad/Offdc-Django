@@ -24,7 +24,13 @@
                     <td>{{ item.quantity }}</td>
                     <td>{{ item.product.price|floatformat:0 }}</td>
                     <td>
-                        <a href="{% url 'remove_from_cart' item.product.id %}" class="btn btn-danger btn-sm">Remove</a>
+                        <td>
+                            <a href="{% url 'decrease_cart' item.product.id %}" class="btn btn-warning btn-sm" {% if item.quantity == 1 %}disabled{% endif %}>➖</a>
+                            <span class="mx-2">{{ item.quantity }}</span>
+                            <a href="{% url 'increase_cart' item.product.id %}" class="btn btn-success btn-sm">➕</a>
+                            <a href="{% url 'remove_from_cart' item.product.id %}" class="btn btn-danger btn-sm">❌</a>
+                        </td>
+                        
                     </td>
                 </tr>
                 {% endfor %}

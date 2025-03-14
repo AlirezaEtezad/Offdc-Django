@@ -25,7 +25,7 @@ class Product(models.Model):
     description = models.TextField()
     stock = models.IntegerField()
     category = models.CharField(max_length=20, choices=PRODUCT_CATEGORY)
-    # image = models.ImageField(upload_to='products/', blank=True, null=True)
+    image = models.ImageField(upload_to='product_images/', blank=True, null=True)
     def __str__(self):
         return self.name
 
