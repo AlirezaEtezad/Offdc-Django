@@ -1,0 +1,44 @@
+version: '3.8'
+
+
+services:
+  offdc_db:
+    image: postgres
+    container_name: offdc_postgres_dockerdb
+    restart: always
+    env_file:
+      - .env
+    environment:
+      POSTGRES_USER: ${POSTGRES_USER}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
+      POSTGRES_DB: ${POSTGRES_DATABASE}
+
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    ports:
+      - "${POSTGRES_PORT}:5432"
+
+
+  web:
+    build: .
+    container_name: offdc_web
+    restart: always
+    depends_on:
+      - offdc_db
+    environment:
+      DATABASE_NAME: POSTGRES_DATABASE
+      DATABASE_USER: POSTGRES_USER
+      DATABASE_PASSWORD: POSTGRES_PASSWORD
+      DATABASE_HOST: POSTGRES_HOST
+      DATABASE_PORT: POSTGRES_PORT
+
+    ports:
+      - "8000:8000"
+    volumes:
+      - .:/app
+    command: >
+      sh -c "python manage.py migrate && python manage.py runserver 0.0.0.0:8000"
+
+volumes:
+  postgres_data:
+      

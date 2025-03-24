@@ -4,7 +4,7 @@ from django.contrib.auth import login, logout, authenticate
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.forms import AuthenticationForm
 from .forms import SignUpForm  # Fixed typo (was `.froms` instead of `.forms`)
-from .models import Product, Cart, CartItem, Order
+from .models import Product, Cart, CartItem, Order, Category
 
 # Create your views here.
 
@@ -129,3 +129,14 @@ def checkout(request):
     
     messages.success(request, 'Your order has been placed successfully!')
     return redirect('profile')
+
+
+
+def categories(request):
+    parent_categories = Category.objects.filter(parent__isnull=True)  # Get only main categories
+    return render(request, 'categories.html', {'parent_categories': parent_categories})
+
+def subcategories(request, category_id):
+    category = Category.objects.get(id=category_id)
+    subcategories = category.subcategories.all()  # Get subcategories
+    return render(request, 'subcategories.html', {'category': category, 'subcategories': subcategories})

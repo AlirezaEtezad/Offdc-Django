@@ -1,0 +1,20 @@
+{% extends 'master.html' %}
+{% load static %}
+
+{% block title %}
+Categories
+{% endblock %}
+
+{% block content %}
+<div class="container mt-5">
+    <h2>Categories</h2>
+    <ul>
+        {% for category in parent_categories %}
+            <li><a href="{% url 'subcategories' category.id %}">{{ category.name }}</a></li>
+        {% endfor %}
+    </ul>
+</div>
+
+{% endblock %}
+
+
