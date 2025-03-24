@@ -11,8 +11,8 @@
 <ul>
     {% for product in products %}
     <div class="product">
-        {% if product.image %}
-            <img src="{{ product.image.url }}" alt="{{ product.name }}" width="150">
+        {% if product.images.all %}
+            <img src="{{ product.images.all.0.image.url }}" alt="{{ product.name }}" width="150">
         {% else %}
             <img src="/static/images/no-image.jpg" alt="No Image" width="150">
         {% endif %}

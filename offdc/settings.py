@@ -43,7 +43,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'shop',
-    # 'postgresql_app', # add this
+    'postgresql_app', # add this
 ]
 
 AUTH_USER_MODEL = 'shop.Customer'
