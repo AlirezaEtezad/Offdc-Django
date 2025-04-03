@@ -1,11 +1,14 @@
 {% extends 'master.html' %}
 {% load static %}
+{% load i18n %}
 
 {% block title %}
 صفحه اصلی
 {% endblock %}
 
 {% block content %}
+<p>{% blocktrans %}This is an internationalized website.{% endblocktrans %}</p>
+
 <header class="hero">
     <div class="container text-center text-white">
         <h1 class="display-4 fw-bold">Upgrade Your Office with Style</h1>
@@ -53,4 +56,5 @@
         </div>
     </div>
 </section>
+
 {% endblock %}

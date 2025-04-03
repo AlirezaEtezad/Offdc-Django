@@ -1,5 +1,6 @@
 from django.db import models
 from django.contrib.auth.models import AbstractUser
+from django.utils.translation import gettext_lazy as _
 # Create your models here.
 
 class Customer(AbstractUser):
@@ -29,9 +30,8 @@ class Category(models.Model):
 
 
 class Product(models.Model):
-
     brand = models.CharField(max_length=50)
-    name = models.CharField(max_length=100)
+    name = models.CharField(_("Product Name"), max_length=100)
     code = models.CharField(max_length=20)
     price = models.DecimalField(max_digits=15, decimal_places=0)
     description = models.TextField()

@@ -3,3 +3,4 @@ dotenv
 psycopg2-binary
 psycopg2
 pillow
+django-db-connection-pool[postgresql]
