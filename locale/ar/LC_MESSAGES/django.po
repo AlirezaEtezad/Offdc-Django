@@ -40,4 +40,4 @@ msgstr ""
 
 #: shop/templates/index.html:10 shop/templates/master.html:5
 msgid "This is an internationalized website."
-msgstr ""
+msgstr "هذا هو موقع عالمي."

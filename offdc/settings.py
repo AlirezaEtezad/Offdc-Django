@@ -68,6 +68,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'offdc.middleware.RedirectToShopMiddleware',  # Custom middleware to redirect to shop page
 ]
 
 ROOT_URLCONF = 'offdc.urls'

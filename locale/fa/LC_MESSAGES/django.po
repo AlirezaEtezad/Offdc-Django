@@ -19,7 +19,7 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
 #: offdc/settings.py:142
 msgid "Farsi"
-msgstr ""
+msgstr "فارسی"
 
 #: offdc/settings.py:143
 msgid "English"
@@ -27,7 +27,7 @@ msgstr ""
 
 #: offdc/settings.py:144
 msgid "Arabic"
-msgstr ""
+msgstr "العربية"
 
 #: offdc/urls.py:25
 msgid "admin/"
@@ -39,4 +39,4 @@ msgstr "نام محصول"
 
 #: shop/templates/index.html:10 shop/templates/master.html:5
 msgid "This is an internationalized website."
-msgstr ""
+msgstr "این یک سایت بین المللی است"
