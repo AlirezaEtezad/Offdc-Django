@@ -4,7 +4,7 @@ from django.contrib.auth import login, logout, authenticate
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.forms import AuthenticationForm
 from .forms import SignUpForm  # Fixed typo (was `.froms` instead of `.forms`)
-from .models import Product, Cart, CartItem, Order, Category
+from .models import Product, Cart, CartItem, Order, OrderItem, Category
 
 # Create your views here.
 
@@ -121,14 +121,23 @@ def checkout(request):
 
     total_price = sum(item.product.price * item.quantity for item in cart_items)
 
-    # Create an order
-    Order.objects.create(user=request.user, total_price=total_price)
+    # ✅ Create the order
+    order = Order.objects.create(user=request.user, total_price=total_price)
 
-    # Clear the cart
+    # ✅ Create OrderItems from cart items
+    for item in cart_items:
+        OrderItem.objects.create(
+            order=order,
+            product=item.product,
+            quantity=item.quantity
+        )
+
+    # ✅ Clear the cart
     cart_items.delete()
-    
+
     messages.success(request, 'Your order has been placed successfully!')
     return redirect('profile')
+
 
 
 
